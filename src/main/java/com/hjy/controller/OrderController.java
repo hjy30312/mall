@@ -1,7 +1,5 @@
 package com.hjy.controller;
 
-import com.hjy.mapper.OrderCommodityMapper;
-import com.hjy.mapper.OrderMapper;
 import com.hjy.service.OrderCommodityService;
 import com.hjy.service.OrderService;
 import com.hjy.service.ShoppingCartService;
