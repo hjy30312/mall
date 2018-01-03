@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjy.mapper.CommodityMapper">
+    <insert id="insertCommodity" >
+        insert into tb_commodity
+            (name,commodity_describe,commodity_value)
+        values
+            (#{name},#{commodityDescribe},#{commodityValue})
+    </insert>
+
+    <delete id="delCommodity" >
+        delete from tb_commodity where commodity_id = #{commodityId}
+    </delete>
+
+    <!--<select id="get" parameterType="_int" resultType="Category">-->
+        <!--select * from   category_  where id= #{id}-->
+    <!--</select>-->
+
+    <update id="updateCommodity" parameterType="Commodity" >
+        update tb_commodity
+        set
+            name=#{name}
+            commodity_describe=##{commodityDescribe}
+        where commodity_id = #{commodityId}
+    </update>
+    <select id="list" resultType="Commodity">
+        select * from tb_commodity
+    </select>
+    <select id="getCommodity" resultType="Commodity">
+        SELECT * FROM tb_commodity
+        WHERE
+            commodity_id = #{commodityId}
+    </select>
+
+</mapper>

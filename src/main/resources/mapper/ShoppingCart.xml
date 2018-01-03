@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjy.mapper.ShoppingCartMapper">
+    <insert id="insertShoppingCartMapper"  >
+    insert into tb_shopping_cart
+        (commodity_id,user_id,count,commodity_value,commodity_name)
+    values (
+        #{commodity.commodityId},
+        #{userId},
+        1,
+         #{commodity.commodityValue},
+         #{commodity.name}
+         )
+    </insert>
+    <delete id="delShoppingCartMapper">
+        DELETE FROM tb_shopping_cart WHERE  user_id=#{userId} AND commodity_id =#{commodityId}
+    </delete>
+
+    <update id="delCount" parameterType="Category" >
+      update tb_shopping_cart
+      set
+          count = count-1
+      WHERE
+           user_id=#{userId} AND commodity_id =#{commodityId}
+    </update>
+
+    <select id="getCount" resultType="int">
+      select  IF( AVG(count) IS NULL ,0,count) as count from tb_shopping_cart where user_id=#{userId} AND commodity_id =#{commodityId}
+    </select>
+
+    <update id="addCount"  >
+    update tb_shopping_cart set count = count+1  WHERE
+          user_id=#{userId} AND commodity_id =#{commodityId}
+    </update>
+    <select id="listByUserId" resultType="ShoppingCart">
+        select * from tb_shopping_cart
+        WHERE
+          user_id=#{userId}
+    </select>
+</mapper>

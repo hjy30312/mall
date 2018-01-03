@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjy.mapper.OrderCommodityMapper">
+
+    <select id="getList" resultType="OrderCommodity">
+        select * from tb_order_commodity
+        WHERE
+          user_id = #{userId}
+        AND
+          commodity_id = #{commodityId}
+    </select>
+    <insert id="insert">
+        insert ignore into tb_order_commodity
+        (user_id,commodity_id,commodity_value,count,value)
+        values
+        (#{userId},#{commodityId},#{commodityValue},#{count},#{value})
+    </insert>
+
+</mapper>
