@@ -33,6 +33,6 @@ public interface OrderService {
 
 
 
-    public int insert( long userId, double orderValue);
+    public void insert( long userId, double orderValue);
 
 }

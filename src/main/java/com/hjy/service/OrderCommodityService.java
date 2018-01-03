@@ -11,10 +11,10 @@ import java.util.List;
  **/
 public interface OrderCommodityService {
 
-    public List<OrderCommodity> getList(long userId, long commodityId);
+    public List<OrderCommodity> getList(long orderId, long commodityId);
 
 
-    public int insert(long userId,
+    public int insert(long orderId,
                       long commodityId,
                       double commodityValue,
                       int count,

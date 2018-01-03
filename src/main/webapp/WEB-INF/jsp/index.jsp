@@ -268,16 +268,15 @@
 
 <%--交互逻辑--%>
 <script>
-
     function InsetShoppingCart(commodityId) {
         $.ajax({
             url:"/ShoppingCart/insert?commodityId=" + commodityId,
             type: "post",
             success:function (result) {
-                if (result == "success") {
+                if (result == "true") {
                     alert("添加成功！");
                 } else {
-                    alert("请登录！");
+                    alert("请登录!");
                 }
             },
             error:function () {

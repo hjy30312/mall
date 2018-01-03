@@ -8,6 +8,8 @@ import com.hjy.service.ShoppingCartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * @author hjy
  * @create 2018/01/03
@@ -30,12 +32,16 @@ public class OrderController {
      * 同时删除该用户所对应的购物车信息
      * @return
      */
-    public String insertOrder() {
+    public String insertOrder(HttpServletRequest httpServletRequest) {
+        String userId = httpServletRequest.getParameter("userId");
+        String commodityId = httpServletRequest.getParameter("commodityId");
 
-        orderCommodityService.insert();
-        orderService.insert();
+        orderService.insert(Long.parseLong(userId),Long.parseLong(commodityId));
 
-        shoppingCartService.delShoppingCart();
+
+       // orderCommodityService.insert();
+
+        //shoppingCartService.delShoppingCart();
         return null;
     }
 

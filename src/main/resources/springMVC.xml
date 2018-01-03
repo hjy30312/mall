@@ -24,6 +24,24 @@
     
     <mvc:default-servlet-handler />
 
+    <!-- 配置拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!-- 拦截哪些请求 -->
+            <mvc:mapping path="/**"/>
+            <!-- 放过哪些请求 -->
+
+            <mvc:exclude-mapping path="/static/**" />
+            <mvc:exclude-mapping path="/index" />
+            <mvc:exclude-mapping path="/login"/>
+            <mvc:exclude-mapping path="/user/checkLogin"/>
+            <mvc:exclude-mapping path="/user/register"/>
+            <mvc:exclude-mapping path="/register"/>
+            <mvc:exclude-mapping path="/captcha"/>
+            <mvc:exclude-mapping path="/captcha.jpg"/>
+            <bean class="com.hjy.interceptor.LoginIntercertor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
     <bean
         class="org.springframework.web.servlet.view.InternalResourceViewResolver">

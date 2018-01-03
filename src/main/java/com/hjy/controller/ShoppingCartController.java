@@ -32,40 +32,16 @@ public class ShoppingCartController {
             HttpServletRequest httpServletRequest,
             Model model) {
         ModelAndView mav = new ModelAndView();
-        //检查Session中是否存在
-        User user = checkUser(httpServletRequest);
-
-        if(user == null) {
-            //还没登录
-            return "redirect:/login";
-        } else {
-            long userId = user.getUserId();
-            List<ShoppingCart> shoppingCartList = shoppingCartService.listByUser(userId);
-            model.addAttribute("shoppingCartList",shoppingCartList);
-            return "listShoppingCart";
-        }
-    }
-
-    /**
-     * 检查Session   用户是否登录
-     * @return
-     */
-    public static User checkUser(HttpServletRequest httpServletRequest) {
         User user = null;
         HttpSession session = httpServletRequest.getSession();
         user = (User) session.getAttribute("user");
-        return user;
-    }
+        long userId = user.getUserId();
 
-    @RequestMapping(value = "/checkSession", method = RequestMethod.GET)
-    @ResponseBody
-    public String checkSession(HttpServletRequest httpServletRequest) {
-        User user = checkUser(httpServletRequest);
-        if (user == null) {
-            return "false";
-        } else {
-            return  "true";
-        }
+        List<ShoppingCart> shoppingCartList = shoppingCartService.listByUser(userId);
+
+        model.addAttribute("shoppingCartList",shoppingCartList);
+        return "listShoppingCart";
+
     }
 
 
@@ -75,19 +51,22 @@ public class ShoppingCartController {
             HttpServletRequest httpServletRequest,
             Model model) {
         ModelAndView mav = new ModelAndView();
-        User user = checkUser(httpServletRequest);
+
+        HttpSession session = httpServletRequest.getSession();
+        User user = (User) session.getAttribute("user");
+        String commodityId = httpServletRequest.getParameter("commodityId");
         if (user == null) {
             return "false";
         } else {
-            String commodityId = httpServletRequest.getParameter("commodityId");
             long userId = user.getUserId();
-            int count = shoppingCartService.getCount(Long.parseLong(commodityId),userId);
+
+            int count = shoppingCartService.getCount(Long.parseLong(commodityId), userId);
             if (count == 0) {
                 //返回0  说明购物车还没有
-                shoppingCartService.insertShoppingCart(Long.parseLong(commodityId),userId);
+                shoppingCartService.insertShoppingCart(Long.parseLong(commodityId), userId);
             } else {
                 //返回1，则添加数量
-                shoppingCartService.addCount(Long.parseLong(commodityId),userId);
+                shoppingCartService.addCount(Long.parseLong(commodityId), userId);
             }
             return "success";
         }
