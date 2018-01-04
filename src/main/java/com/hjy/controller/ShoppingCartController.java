@@ -60,6 +60,8 @@ public class ShoppingCartController {
         } else {
             long userId = user.getUserId();
 
+
+
             int count = shoppingCartService.getCount(Long.parseLong(commodityId), userId);
             if (count == 0) {
                 //返回0  说明购物车还没有
