@@ -31,15 +31,19 @@ public class OrderController {
      * @return
      */
     public String insertOrder(HttpServletRequest httpServletRequest) {
-        String userId = httpServletRequest.getParameter("userId");
-        String commodityId = httpServletRequest.getParameter("commodityId");
+        long userId = Long.parseLong(httpServletRequest.getParameter("userId"));
+        long commodityId = Long.parseLong(httpServletRequest.getParameter("commodityId"));
+        double commodityValue = Double.parseDouble(httpServletRequest.getParameter("commodityValue"));
 
-        orderService.insert(Long.parseLong(userId),Long.parseLong(commodityId));
+        int count = Integer.parseInt(httpServletRequest.getParameter("count"));
+        double value = Double.parseDouble(httpServletRequest.getParameter("value"));
 
+        orderService.insert(userId,commodityId);
+        long orderId = orderService.getOrderId();
 
-       // orderCommodityService.insert();
-
-        //shoppingCartService.delShoppingCart();
+        orderCommodityService.insert(
+                orderId,commodityId,commodityValue,count,value);
+        shoppingCartService.delShoppingCart(commodityId,userId);
         return null;
     }
 

@@ -39,4 +39,9 @@ public class OrderServiceImpl implements OrderService {
     public void insert(long userId, double orderValue) {
         orderMapper.insert(userId, orderValue);
     }
+
+    @Override
+    public long getOrderId() {
+        return orderMapper.getOrderId();
+    }
 }

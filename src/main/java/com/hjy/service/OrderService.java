@@ -35,4 +35,9 @@ public interface OrderService {
 
     public void insert( long userId, double orderValue);
 
+    /**
+     * 获得自增主键ID
+     * @return
+     */
+    long getOrderId();
 }

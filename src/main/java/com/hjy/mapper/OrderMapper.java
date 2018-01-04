@@ -23,4 +23,6 @@ public interface OrderMapper {
      * @return
      */
     List<Order> list();
+
+    long getOrderId();
 }
