@@ -62,6 +62,4 @@
 		<property name="basePackage" value="com.hjy.mapper"/>
 	</bean>
 
-
-
 </beans>

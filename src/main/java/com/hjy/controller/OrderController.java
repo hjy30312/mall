@@ -5,6 +5,7 @@ import com.hjy.service.OrderService;
 import com.hjy.service.ShoppingCartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
  * @create 2018/01/03
  **/
 @Controller
+@RequestMapping("/Order")
 public class OrderController {
 
     @Autowired
@@ -30,6 +32,7 @@ public class OrderController {
      * 同时删除该用户所对应的购物车信息
      * @return
      */
+    @RequestMapping("/insert")
     public String insertOrder(HttpServletRequest httpServletRequest) {
         long userId = Long.parseLong(httpServletRequest.getParameter("userId"));
         long commodityId = Long.parseLong(httpServletRequest.getParameter("commodityId"));

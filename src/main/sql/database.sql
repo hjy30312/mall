@@ -41,7 +41,6 @@ INSERT INTO
   tb_commodity(name,manufacturer_name,commodity_describe,commodity_value)
 VALUES
   ('小米7','小米公司','无','3000'),
-  ('ipad2','苹果公司','无','2000'),
   ('小米4','小米公司','无','1000');
 
 

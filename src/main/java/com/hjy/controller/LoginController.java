@@ -9,7 +9,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.annotation.Resource;
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -103,7 +102,8 @@ public class LoginController {
                 model.put("username",username);
                 session.setAttribute(
                         "user", user);
-                return "redirect:/index";
+                return "back_index";
+                //return "redirect:index";
             } else {
                 model.put("msg", "用户名或密码错误");
                 return "/login";

@@ -1,0 +1,123 @@
+	 body{
+	    overflow-x: hidden;
+	  }
+	 #main{  
+		width:1366px;  
+		height:457px;  
+		MARGIN-RIGHT: auto;  
+		MARGIN-LEFT: auto;  
+	  }  
+	  
+	  /*logo块导航*/
+	 .topNav{
+	 	height: 62px;
+	 	background: #2A2C2E;
+	 	color: #fff;
+	 }
+	 .fl{
+	 	float: left;
+	 }
+	 .fr{
+	 	float: right;
+	 }
+	 .logoText{
+	 	margin-right: 60px;
+	 }
+	 /*后台页面小导航*/
+	.midNav{
+		height:32px ;
+		background:#E1E0E0 ;
+	}
+	.link{
+		line-height: 32px;
+		font-size: 12px;
+		margin-left: 10px;
+	}
+	.link a{
+		color: black;
+	}
+	.link a:hover{
+		color: red;
+		text-decoration: none;
+	}
+	.link span{
+		margin: 0px 10px;
+	}
+	 /*中部管理*/
+	.midManager{
+		height: 40px;
+		background: #CCCCCC;
+	}
+	.LeftManager{
+		width: 200px;
+		height:40px;
+		border-right: 1px solid  #0B52D7;
+	}
+	.titleText{
+		margin-left: 5px;
+		line-height: 40px;
+		font-weight: bold;
+	}
+	/*左侧管理*/
+	.LeftNav{
+		background: #505254;
+		width:200px;
+		height: 523px;
+	}
+	
+	#treeview1{
+		position: relative;
+		left: -10px;
+		border-radius: none;
+		border: none;
+			    	}
+	#treeview1 li{
+		background: #505254;
+		color: white;
+		border: none;
+	}
+	/*右侧信息提示*/
+	.RightContent{
+		font-size: 14px;
+		font-weight: 600;
+		height: 523px;
+		width: auto;
+	}
+	.RightContent input,.RightContent select{
+		border: none;
+		background: #E8E8E8;
+		height: 30px;
+	}
+	.RightContent input{
+		margin:16px 0px  0px  18px;
+	}
+	.tip{
+		position: relative;
+		right: 70px;
+	}
+	#addinfo{
+	 width: 100px;
+	}
+	.dropmenu{
+		width: 100px;
+	}
+	/*右侧表格*/
+	.optionTop{
+		width: auto;
+		height: 60px;
+	}
+	.optionBottom{
+		width: 1080px;
+		height: auto;
+		position: relative;
+		right: 69px;
+	}
+	td.btn-text{
+		width: 280px;
+	}
+	thead{
+		text-align: center;
+	}
+	.btn-text{
+		text-align: center;
+	}

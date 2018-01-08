@@ -32,7 +32,7 @@ public class CommodityServiceImplTest {
 
     @Test
     public void insertCommodity() throws Exception {
-        commodityService.insertCommodity("hjy","何金洋",100);
+        commodityService.insertCommodity("hjy", "小米公司", "何金洋",100);
     }
 
     @Test

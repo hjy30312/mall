@@ -1,4 +1,3 @@
-
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page  language="java" pageEncoding="utf-8" %>
 <%String path = request.getContextPath();%>

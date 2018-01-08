@@ -88,7 +88,7 @@
                                     <td>${scl.commodityValue}</td>
                                     <td>${scl.values}</td>
                                     <td>
-                                        <button class="btn btn-info" onclick="">购买</button>
+                                        <button class="btn btn-info" onclick="insertOrder(${cl.commodityId})">购买</button>
                                     </td>
                                 </tr>
                             </c:forEach>
@@ -268,12 +268,13 @@
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <%--交互逻辑--%>
 <script>
-    function InsetShoppingCart(commodityId) {
+    function insertOrder(commodityId) {
         $.ajax({
             url:"/ShoppingCart/insert?commodityId=" + commodityId,
             type: "post",
             success:function (data) {
-                if (data.state == '1') {
+                window.console(data);
+                if (data === "success") {
                     alert("添加成功！");
                 } else {
                     alert("请登录！");

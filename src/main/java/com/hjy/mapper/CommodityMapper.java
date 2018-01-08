@@ -27,12 +27,13 @@ public interface CommodityMapper {
 
     /**
      * 添加商品
-     *
      * @param name
+     * @param manufacturerName
      * @param commodityDescribe
      * @param commodityValue
      */
     public void insertCommodity(@Param("name") String name,
+                                @Param("manufacturerName") String manufacturerName,
                                 @Param("commodityDescribe") String commodityDescribe,
                                 @Param("commodityValue") double commodityValue);
 

@@ -6,9 +6,9 @@
 <mapper namespace="com.hjy.mapper.CommodityMapper">
     <insert id="insertCommodity" >
         insert into tb_commodity
-            (name,commodity_describe,commodity_value)
+            (name,manufacturer_name,commodity_describe,commodity_value)
         values
-            (#{name},#{commodityDescribe},#{commodityValue})
+            (#{name},#{manufacturerName},#{commodityDescribe},#{commodityValue})
     </insert>
 
     <delete id="delCommodity" >

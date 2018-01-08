@@ -58,7 +58,7 @@
 <!--正文内容-->
 <div class="midcontent">
     <div class="container">
-        <!--左边留白-->
+        <!--左边留白 做导航 //TODO-->
         <div class="col-md-1"></div>
         <!--中间内容-->
         <div class="col-md-10">
@@ -273,7 +273,7 @@
             url:"/ShoppingCart/insert?commodityId=" + commodityId,
             type: "post",
             success:function (result) {
-                if (result == "true") {
+                if (result == "success") {
                     alert("添加成功！");
                 } else {
                     alert("请登录!");

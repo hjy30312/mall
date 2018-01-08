@@ -29,13 +29,19 @@ public class CommodityServiceImpl implements CommodityService {
         return commodityMapper.getCommodity(commodityId);
     }
 
+
     @Override
-    public void insertCommodity(String name, String commodityDescribe, double commodityValue) {
-        commodityMapper.insertCommodity(name, commodityDescribe, commodityValue);
+    public void insertCommodity(String name, String manufacturerName,String commodityDescribe, double commodityValue) {
+        commodityMapper.insertCommodity(name, manufacturerName, commodityDescribe, commodityValue);
     }
 
     @Override
     public void delCommodity(long commodityId) {
         commodityMapper.delCommodity(commodityId);
+    }
+
+    @Override
+    public void updateCommodity(long commodityId, String name, String manufacturerName, String commodityDescribe, double commodityValue) {
+
     }
 }

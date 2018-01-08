@@ -21,10 +21,12 @@ public interface CommodityService {
     /**
      * 添加商品
      * @param name
+     * @param manufacturerName
      * @param commodityDescribe
      * @param commodityValue
      */
-    void insertCommodity(String name, String commodityDescribe, double commodityValue);
+    void insertCommodity(String name, String manufacturerName,
+                         String commodityDescribe, double commodityValue);
 
     /**
      * 删除商品
@@ -32,4 +34,6 @@ public interface CommodityService {
      */
     void delCommodity(long commodityId);
 
+    void updateCommodity(long commodityId, String name, String manufacturerName,
+                         String commodityDescribe, double commodityValue);
 }

@@ -4,7 +4,6 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.hjy.mapper.OrderMapper">
-    getOrderId
 
     <select id="getOrderId" resultType="Order">
         SELECT LAST_INSERT_ID();

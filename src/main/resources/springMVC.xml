@@ -32,6 +32,7 @@
             <!-- 放过哪些请求 -->
 
             <mvc:exclude-mapping path="/static/**" />
+            <mvc:exclude-mapping path="/WEB-INF/**" />
             <mvc:exclude-mapping path="/index" />
             <mvc:exclude-mapping path="/login"/>
             <mvc:exclude-mapping path="/user/checkLogin"/>
