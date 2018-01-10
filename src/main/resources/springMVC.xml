@@ -35,7 +35,7 @@
             <mvc:exclude-mapping path="/WEB-INF/**" />
             <mvc:exclude-mapping path="/index" />
             <mvc:exclude-mapping path="/login"/>
-            <mvc:exclude-mapping path="/user/checkLogin"/>
+            <mvc:exclude-mapping path="/checkLogin"/>
             <mvc:exclude-mapping path="/user/register"/>
             <mvc:exclude-mapping path="/register"/>
             <mvc:exclude-mapping path="/captcha"/>

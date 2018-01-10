@@ -34,7 +34,7 @@
     <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
         <h3>登录</h3>
         <hr>
-        <form action="<%=path%>/user/checkLogin" method="post" class="am-form" onsubmit="return checkLoginForm()">
+        <form action="<%=path%>/checkLogin" method="post" class="am-form" onsubmit="return checkLoginForm()">
             <span style="color: #FF0000;">${msg}</span>
             <br>
             <label for="username">账号:</label>

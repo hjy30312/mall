@@ -42,13 +42,11 @@
     </div>
     <div class="midArea">
         <!--左侧导航-->
-
-
         <div class="LeftNav fl">
             <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-                <button type="button" class="btn btn-default">BUTTON  </button>
-                <button type="button" class="btn btn-default">BUTTON  </button>
-                <button type="button" class="btn btn-default">BUTTON  </button>
+                <button type="button" class="btn btn-default">商品管理  </button>
+                <button type="button" class="btn btn-default">订单管理</button>
+                <button type="button" class="btn btn-default">用户信息  </button>
                 <button type="button" class="btn btn-default">BUTTON  </button>
                 <button type="button" class="btn btn-default">BUTTON  </button>
                 <button type="button" class="btn btn-default">BUTTON  </button>
@@ -87,33 +85,28 @@
                     <!--动态显示 -->
                     <thead class="table-info">
                     <!--表头-->
-                    <tr>
-                        <td>编号</td>
-                        <td>标题</td>
-                        <td>来源</td>
-                        <td>操作</td>
+                    <<tr>
+                        <th>商品编号</th>
+                        <th>名称</th>
+                        <th>价格</th>
+                        <th>说明</th>
+                        <th>操作</th>
                     </tr>
                     </thead>
                     <!--内容-->
                     <tbody>
+                    <c:forEach var="cl" items="${commodityList}">
                     <tr>
-                        <td>1</td>
-                        <td>书</td>
-                        <td>1</td>
-                        <td class="btn-text">
-                            <button type="button"  class="btn btn-default ">修改</button>
-                            <button type="button"  class="btn btn-default ">删除</button>
+                        <td>${cl.commodityId}</td>
+                        <td>${cl.name}</td>
+                        <td>${cl.commodityValue}</td>
+                        <td>${cl.commodityDescribe}</td>
+                        <td>
+                            <button class="btn btn-info" onclick="InsetShoppingCart(${cl.commodityId})">修改</button>
+                            <button class="btn btn-info" onclick="InsetShoppingCart(${cl.commodityId})">删除</button>
                         </td>
                     </tr>
-                    <tr>
-                        <td><span>2</span></td>
-                        <td>笔</td>
-                        <td>80</td>
-                        <td class="btn-text">
-                            <button  type="button"  class="btn btn-default ">修改</button>
-                            <button  type="button"  class="btn btn-default ">删除</button>
-                        </td>
-                    </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
             </div>

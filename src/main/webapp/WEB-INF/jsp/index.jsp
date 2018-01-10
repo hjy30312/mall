@@ -60,8 +60,8 @@
     <div class="container">
         <!--左边留白 做导航 //TODO-->
         <div class="col-md-1"></div>
-        <!--中间内容-->
-        <div class="col-md-10">
+        <!--中间物品内容-->
+        <div class="col-md-6">
             <div class="container">
                 <div class="panel panel-default">
                     <div class="page-header text-center">
@@ -96,8 +96,42 @@
                 </div>
             </div>
         </div>
-        <!--右边留白-->
-        <div class="col-md-1"></div>
+        <!--右边购物车留白-->
+        <div class="col-md-5">
+            <div class="container">
+                <div class="panel panel-default">
+                    <div class="page-header text-center">
+                        <h2>购物车页面</h2>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>商品名称</th>
+                                <th>数量</th>
+                                <th>单价</th>
+                                <th>总价格</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <c:forEach var="scl" items="${shoppingCartList}">
+                                <tr>
+                                    <td>${scl.commodityName}</td>
+                                    <td>${scl.count}</td>
+                                    <td>${scl.commodityValue}</td>
+                                    <td>${scl.values}</td>
+                                    <td>
+                                        <button class="btn btn-info" onclick="insertOrder(${cl.commodityId})">购买</button>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>
@@ -286,3 +320,20 @@
     }
 </script>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

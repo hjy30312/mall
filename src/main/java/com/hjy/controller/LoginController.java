@@ -49,6 +49,7 @@ public class LoginController {
     }
 
 
+
     /**
      * 注册功能：从数据库中找是否有相同的username，
      * 如果有 则返回注册页面重新注册
@@ -79,7 +80,7 @@ public class LoginController {
 
 
 
-    @RequestMapping(value = "/user/checkLogin", method = RequestMethod.POST)
+    @RequestMapping(value = "/checkLogin", method = RequestMethod.POST)
     public String checkLogin(
             String username,
             String password,
@@ -102,8 +103,11 @@ public class LoginController {
                 model.put("username",username);
                 session.setAttribute(
                         "user", user);
-                return "back_index";
-                //return "redirect:index";
+                if ("admin".equals(username)) {
+                    return "redirect:admin/back_index";
+                } else {
+                    return "redirect:/user/index";
+                }
             } else {
                 model.put("msg", "用户名或密码错误");
                 return "/login";
